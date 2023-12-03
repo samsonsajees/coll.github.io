@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waste Collection Schedules</title>
+  <style>
+    #schedules {
+      margin-top: 20px;
+    }
+
+    .schedule {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  
+    body
+    {
+        font-family: Arial, sans-serif;
+            margin: 20;
+            height: 100vh;
+
+            align-items:normal;
+            justify-content: center;
+            background: linear-gradient(250deg,black,green );
+    }
+   
+  </style>
+</head>
+<body>
+    <div id="schedules">
+        <h2>Collection Schedules</h2>
+        <div id="scheduleList"></div>
+      </div>
+    <script>
+        // Sample data (replace this with actual data from the server/database)
+        const collectionSchedules = [
+          { location: 'Main Street', day: 'Monday', time: '8:00 AM' },
+          { location: 'Park Avenue', day: 'Wednesday', time: '10:00 AM' },
+          // Add more schedules as needed
+        ];
+    
+        
+    
+        // Function to display collection schedules
+        function displayCollectionSchedules() {
+          const scheduleList = document.getElementById('scheduleList');
+          scheduleList.innerHTML = '';
+    
+          collectionSchedules.forEach(schedule => {
+            const scheduleElement = document.createElement('div');
+            scheduleElement.className = 'schedule';
+            scheduleElement.innerHTML = `<strong>${schedule.location}</strong> - ${schedule.day} at ${schedule.time}`;
+            scheduleList.appendChild(scheduleElement);
+          });
+        }
+    
+       
+    
+        // Initial display
+        displayCollectionSchedules();
+        
+      </script>
+    
